@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  cypress:
+    image: cypress/included:latest
+    container_name: cypress_tests
+    working_dir: /e2e
+    volumes:
+      - ./:/e2e
+    environment:
+      - CYPRESS_browser=firefox
+    command: >
+      npx cypress run --browser firefox
